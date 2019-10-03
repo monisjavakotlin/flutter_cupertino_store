@@ -28,6 +28,7 @@ dependencies:
   shrine_images: ^1.0.0
 
 dev_dependencies:
+  pedantic: ^1.4.0
   flutter_test:
     sdk: flutter
 
