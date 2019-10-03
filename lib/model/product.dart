@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 
 enum Category {
   all,
@@ -14,7 +14,7 @@ class Product {
   final String name;
   final int price;
 
-  Product(
+  const Product(
       {@required this.category,
       @required this.id,
       @required this.isFeatured,

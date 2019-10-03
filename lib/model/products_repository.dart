@@ -1,7 +1,7 @@
 import 'product.dart';
 
 class ProductsRepository {
-  static List<Product> allProducts = [
+  static const allProducts = <Product>[
     Product(
       category: Category.accessories,
       id: 0,
@@ -10,26 +10,26 @@ class ProductsRepository {
       price: 120,
     ),
     Product(
-      category: Category.home,
-      id: 9,
+      category: Category.accessories,
+      id: 1,
       isFeatured: true,
-      name: 'Gilt desk trio',
+      name: 'Stella sunglasses',
       price: 58,
     ),
     Product(
-      category: Category.clothing,
-      id: 33,
-      isFeatured: true,
-      name: 'Cerise scallop tee',
-      price: 42,
+      category: Category.accessories,
+      id: 2,
+      isFeatured: false,
+      name: 'Whitney belt',
+      price: 35,
     ),
   ];
 
-  /* static List<Product> loadProducts(Category category) {
+  static List<Product> loadProducts(Category category) {
     if (category == Category.all) {
       return allProducts;
     } else {
       return allProducts.where((p) => p.category == category).toList();
     }
-  }*/
+  }
 }
