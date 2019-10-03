@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
+import 'product_list_tab.dart';
+import 'search_tab.dart';
+import 'shopping_cart_tab.dart';
+
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,19 +38,19 @@ class CupertinoStoreHomePage extends StatelessWidget {
           case 0:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: null,
+                child: ProductListTab(),
               );
             });
           case 1:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: null,
+                child: SearchTab(),
               );
             });
           case 2:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: null,
+                child: ShoppingCartTab(),
               );
             });
         }
