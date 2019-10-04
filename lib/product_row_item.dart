@@ -4,22 +4,22 @@ import 'model/product.dart';
 import 'styles.dart';
 
 class ProductRowItem extends StatelessWidget {
+  final Product product;
+  final int index;
+  final bool lastItem;
+
   const ProductRowItem({
     this.index,
     this.product,
     this.lastItem,
   });
 
-  final Product product;
-  final int index;
-  final bool lastItem;
-
   @override
   Widget build(BuildContext context) {
     final row = SafeArea(
       top: false,
       bottom: false,
-      minimum: const EdgeInsets.only(
+      minimum: EdgeInsets.only(
         left: 16,
         top: 8,
         bottom: 8,
@@ -68,7 +68,6 @@ class ProductRowItem extends StatelessWidget {
         ],
       ),
     );
-
     if (lastItem) {
       return row;
     }

@@ -8,6 +8,7 @@ import 'app.dart';
 void main() {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setEnabledSystemUIOverlays([]);
   return runApp(
     ChangeNotifierProvider<AppStateModel>(
       builder: (context) => AppStateModel(),

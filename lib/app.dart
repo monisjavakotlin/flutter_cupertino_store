@@ -18,7 +18,7 @@ class CupertinoStoreHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
             title: Text('Products'),
@@ -34,20 +34,31 @@ class CupertinoStoreHomePage extends StatelessWidget {
         ],
       ),
       tabBuilder: (context, index) {
+        CupertinoTabView returnValue;
         switch (index) {
           case 0:
-            return CupertinoTabView(builder: (context) {
-              return ProductListTab();
+            returnValue = CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: ProductListTab(),
+              );
             });
+            break;
           case 1:
-            return CupertinoTabView(builder: (context) {
-              return SearchTab();
+            returnValue = CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: SearchTab(),
+              );
             });
+            break;
           case 2:
-            return CupertinoTabView(builder: (context) {
-              return ShoppingCartTab();
+            returnValue = CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: ShoppingCartTab(),
+              );
             });
+            break;
         }
+        return returnValue;
       },
     );
   }

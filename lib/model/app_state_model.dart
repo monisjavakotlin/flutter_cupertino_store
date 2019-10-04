@@ -21,4 +21,10 @@ class AppStateModel extends foundation.ChangeNotifier {
       }).toList();
     }
   }
+
+  List<Product> search(String searchTerms) {
+    return getProducts().where((product) {
+      return product.name.toLowerCase().contains(searchTerms.toLowerCase());
+    }).toList();
+  }
 }
