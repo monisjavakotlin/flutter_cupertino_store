@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 
+import 'model/app_state_model.dart';
 import 'model/product.dart';
 import 'styles.dart';
 
@@ -59,7 +61,10 @@ class ProductRowItem extends StatelessWidget {
           ),
           CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              final model = Provider.of<AppStateModel>(context);
+              model.addProductToCart(product.id);
+            },
             child: Icon(
               CupertinoIcons.plus_circled,
               semanticLabel: 'Add',

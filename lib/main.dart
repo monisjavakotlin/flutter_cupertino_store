@@ -6,12 +6,11 @@ import 'package:provider/provider.dart';
 import 'app.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  SystemChrome.setEnabledSystemUIOverlays([]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+//  SystemChrome.setEnabledSystemUIOverlays([]);
   return runApp(
     ChangeNotifierProvider<AppStateModel>(
-      builder: (context) => AppStateModel(),
+      builder: (context) => AppStateModel()..loadProducts(),
       child: CupertinoStoreApp(),
     ),
   );

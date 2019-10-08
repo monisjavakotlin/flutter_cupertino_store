@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
+  //list
   static const TextStyle productRowItemName = TextStyle(
     color: Color.fromRGBO(0, 0, 0, 0.8),
-    fontSize: 18,
+    fontSize: 16,
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.normal,
   );
@@ -15,14 +16,15 @@ abstract class Styles {
     fontWeight: FontWeight.w300,
   );
 
+  static const Color productRowDivider = Color(0xFFD9D9D9);
+
+  //search
   static const TextStyle searchText = TextStyle(
     color: Color.fromRGBO(0, 0, 0, 1),
     fontSize: 14,
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.normal,
   );
-
-  static const Color productRowDivider = Color(0xFFD9D9D9);
 
   static const Color searchBackground = Color(0xffe0e0e0);
 
@@ -31,4 +33,21 @@ abstract class Styles {
   static const Color searchCursorColor = Color.fromRGBO(0, 122, 255, 1);
 
   static const Color scaffoldBackground = Color(0xfff0f0f0);
+
+  //shopping cart
+  static const TextStyle deliveryTimeLabel = TextStyle(
+    color: Color(0xFFC2C2C2),
+    fontWeight: FontWeight.w300,
+  );
+
+  static const TextStyle deliveryTime = TextStyle(
+    color: CupertinoColors.inactiveGray,
+  );
+
+  static const TextStyle productRowTotal = TextStyle(
+    color: Color.fromRGBO(0, 0, 0, 0.8),
+    fontSize: 18,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.bold,
+  );
 }

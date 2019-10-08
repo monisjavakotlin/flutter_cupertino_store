@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
+import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'package:provider/provider.dart';
 
 import 'model/app_state_model.dart';
 import 'product_row_item.dart';
 import 'search_bar.dart';
 import 'styles.dart';
+
+//Future<SystemUiOverlay> restore = AppStateModel.restoreSystemUIOverlays();
 
 class SearchTab extends StatefulWidget {
   @override
@@ -21,6 +25,13 @@ class _SearchTabState extends State<SearchTab> {
   @override
   void initState() {
     super.initState();
+   /* //keyboard listener
+    KeyboardVisibilityNotification().addNewListener(
+      onChange: (bool visible) {
+        print(visible);
+      },
+    );*/
+    //textfeild listener
     _controller = TextEditingController()..addListener(_onTextChanged);
     _focusNode = FocusNode();
   }
@@ -40,7 +51,7 @@ class _SearchTabState extends State<SearchTab> {
 
   Widget _buildSearchBox() {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8),
       child: SearchBar(
         controller: _controller,
         focusNode: _focusNode,
@@ -54,7 +65,7 @@ class _SearchTabState extends State<SearchTab> {
     final results = model.search(_terms);
 
     return DecoratedBox(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Styles.scaffoldBackground,
       ),
       child: SafeArea(
